@@ -9,19 +9,19 @@
 #pragma warning (disable : 4996)
 
 //Merge_Sort
-//O(N * logN)ÀÇ ½Ã°£º¹Àâµµ
-//ÀÏ´Ü ¹İÀ¸·Î ÂÉ°³°í ³ªÁß¿¡ ÇÕÄ¡ÀÚ
+//O(N * logN)ì˜ ì‹œê°„ë³µì¡ë„
+//ì¼ë‹¨ ë°˜ìœ¼ë¡œ ìª¼ê°œê³  ë‚˜ì¤‘ì— í•©ì¹˜ì
 
 using namespace std;
 
 int number = 8;
-int sorted[8]; // Á¤·Ä ¹è¿­Àº ¹«Á¶°Ç Àü¿ªº¯¼ö·Î ÇØ¾ßÇÔ
+int sorted[8]; // ì •ë ¬ ë°°ì—´ì€ ë¬´ì¡°ê±´ ì „ì—­ë³€ìˆ˜ë¡œ í•´ì•¼í•¨
 
 void merge(int a[], int m, int middle, int n) {
 	int i = m;
 	int j = middle + 1;
 	int k = m;
-	// ÀÛÀº ¼ø¼­´ë·Î ¹è¿­¿¡ »ğÀÔ
+	// ì‘ì€ ìˆœì„œëŒ€ë¡œ ë°°ì—´ì— ì‚½ì…
 	while (i <= middle && j <= n) {
 		if (a[i] <= a[j]) {
 			sorted[k] = a[i];
@@ -33,15 +33,15 @@ void merge(int a[], int m, int middle, int n) {
 		}
 		k++;
 	}
-	// ³²Àº µ¥ÀÌÅÍ »ğÀÔ
+	// ë‚¨ì€ ë°ì´í„° ì‚½ì…
 
-	if (i > middle) { //i°¡ ¸ÕÀú ³¡³ª¸é, ³²Àº j »ğÀÔ
+	if (i > middle) { //iê°€ ë¨¼ì € ëë‚˜ë©´, ë‚¨ì€ j ì‚½ì…
 		for (int t = j; t <= n; t++) {
 			sorted[k] = a[t];
 			k++;
 		}
 	}
-	else { // j°¡ ¸ÕÀú ³¡³ª¸é, ³²À½ i »ğÀÔ
+	else { // jê°€ ë¨¼ì € ëë‚˜ë©´, ë‚¨ìŒ i ì‚½ì…
 		for (int t = i; t <= middle; t++) {
 			sorted[k] = a[t];
 			k++;
@@ -54,13 +54,13 @@ void merge(int a[], int m, int middle, int n) {
 }
 
 void mergeSort(int a[], int m, int n) {
-	if (m < n) { // Å©±â°¡ 1º¸´Ù Å« °æ¿ì
+	if (m < n) { // í¬ê¸°ê°€ 1ë³´ë‹¤ í° ê²½ìš°
 		int middle = (m + n) / 2;
 		mergeSort(a, m, middle);
 		mergeSort(a, middle + 1, n);
 		merge(a, m, middle, n);
 	}
-} // ÇÕÄ¡±â 
+} // í•©ì¹˜ê¸° 
 
 int main(void) {
 	int arr[] = { 7,6,5,8,3,4,9,1 };
