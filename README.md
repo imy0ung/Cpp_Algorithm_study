@@ -31,13 +31,17 @@
 
 ## Stack
 
-```#include<stack> ```
+기본적인 스택 sql
 
-```s.push()```  스택 삽입
+```c
+#include<stack>
 
-```s.pop()``` 스택 팝
+s.push() // 스택 삽입
 
-```s.top()``` 스택에서 탑 값 가져오기
+s.pop() // 스택 팝
+
+s.top() // 스택에서 탑 값 가져오기
+```
 
 기본적인 스택 출력
 
@@ -48,4 +52,25 @@ while(!s.empty()) {
 }
 ```
    
+## Queue
 
+```c
+#include<queue>
+
+s.push() // 큐 삽입
+
+s.pop() // 큐 팝
+
+s.front() // 큐 프론트 반환
+
+s.back() // 큐 레어 반환
+```
+
+기본적인 큐 출력
+
+```c
+while(!q.empty()) {
+      cout << q.front() << ' ';
+      q.pop()
+}
+```
