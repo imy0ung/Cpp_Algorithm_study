@@ -19,11 +19,11 @@ int main(void) {
 		for (int j = i; j < 10; j++) {
 			if (min > arr[j]) {
 				min = arr[j];
-				index = j; // ë²”ìœ„ ë‚´ì—ì„œ ê°€ì¥ ì‘ì€ ê°’ì„ ì°¾ê¸°
+				index = j; // ¹üÀ§ ³»¿¡¼­ °¡Àå ÀÛÀº °ªÀ» Ã£±â
 			}
 		}
 		temp = arr[i];
 		arr[i] = arr[index];
-		arr[j] = temp; // ê°€ì¥ ì‘ì€ ê°’ì„ ì•ìœ¼ë¡œ ë³´ë‚´ì£¼ê¸°
+		arr[j] = temp; // °¡Àå ÀÛÀº °ªÀ» ¾ÕÀ¸·Î º¸³»ÁÖ±â
 	}
 } // selection sort O(n^2)
