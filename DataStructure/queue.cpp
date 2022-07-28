@@ -7,7 +7,7 @@
 #pragma warning (disable : 4996)
 
 //counting sort
-//¼ıÀÚ ¹üÀ§°¡ ÁÖ¾îÁ³À» ¶§, °¡Àå ºü¸¥ ¾Ë°í¸®Áò
+//ìˆ«ì ë²”ìœ„ê°€ ì£¼ì–´ì¡Œì„ ë•Œ, ê°€ì¥ ë¹ ë¥¸ ì•Œê³ ë¦¬ì¦˜
 using namespace std;
 
 int main(void) {
