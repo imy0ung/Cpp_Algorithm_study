@@ -92,3 +92,40 @@ while(!q.empty()) {
 1. 최상단 노드를 살펴본다.
 
 2. 가장 인접한 노드를 방문처리해주고, 해당 노드를 스택에 넣어준다.
+
+## Union find
+
+> 그래프 상에서 서로 연결되어있는지 확인하는 알고리즘
+
+1. 배열을 이용하여, 각 노드에 부모를 저장해준다. 이때, 아무것도 연결되어있지 않다면, 자기 자신을 가르친다.
+
+2. getParent함수를 이용하여, 부모 노드를 찾아줄 수 있다. (기본적으로 더 작은 값을 가지는 노드가 부모가 된다.
+
+```c
+int getParent(int parent[], int x) {
+	if (parent[x] == x) return x;
+	return parent[x] = getParent(parent, parent[x]); // 뿌리노드까지 가는 개념
+}
+```
+
+3. unionParent 함수를 이용하여, 서로 다른 두 노드를 연결해줄 수 있다.
+
+```c
+void unionParent(int parent[], int a, int b) {
+	a = getParent(parent, a);
+	b = getParent(parent, b);
+	if (a < b) parent[b] = a; // 두 노드의 부모 중 가장 작은 값이 부모
+	else parent[a] = b;
+}
+```
+
+4. findParent함수를 이용하여, 서로 연결되어있는지 확인할 수 있다.
+
+```c
+int findParent(int parent[], int a, int b) {
+	a = getParent(parent, a);
+	b = getParent(parent, b);
+	if (a == b) return 1;
+	return 0;
+}
+```
