@@ -7,12 +7,12 @@
 #pragma warning (disable : 4996)
 
 //BFS(Breadth First Search)
-//�ʺ� �켱���� 
-//1���� �Ÿ��� ���� ����� �� ���� Ž���ϴ� �˰�����
+//너비를 우선으로 
+//1부터 거리가 가장 가까운 거 부터 탐색하는 알고리즘
 
 /*
-* ť���� �ϳ��� ��带 ������,
-* �ش� ��忡 ����� ��� �� �湮���� ���� ��带 �湮�ϰ� ť�� ����
+* 큐에서 하나의 노드를 꺼내고,
+* 해당 노드에 연결된 노드 중 방문하지 않은 노드를 방문하고 큐에 삽입
 */
 
 using namespace std;
@@ -31,7 +31,7 @@ void bfs(int start) {
 		printf("%d ", x);
 		for (int i = 0; i < a[x].size(); i++) {
 			int y = a[x][i];
-			if (!c[y]) { // �湮ó���� �ȵȰŶ��, �湮ó�����ְ� push
+			if (!c[y]) { // 방문처리가 안된거라면, 방문처리해주고 push
 				q.push(y);
 				c[y] = true;
 			}
