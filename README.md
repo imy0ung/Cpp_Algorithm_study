@@ -129,3 +129,17 @@ int findParent(int parent[], int a, int b) {
 	return 0;
 }
 ```
+
+## Kruskal Algorithm
+
+> 최소비용으로 노드를 연결시키는 알고리즘
+
+> 간선을 거리가 짧은 순서대로 그래프에 포함시키면 어떨까?
+
+1. 간선 class를 생성하여, 노드와 비용를 저장
+
+2. 사이클 테이블을 확인 (해당노드와 연결하고자 하는 노드의 부모가 같은지 확인하면됨 - unionfind)
+
+3. 간선 class를 operator와 sort를 이용하여 정렬
+
+4. 사이클을 형성하는 경우, 건너뛰고 최소 비용을 계산
